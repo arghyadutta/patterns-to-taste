@@ -1,6 +1,9 @@
 '''
 ------------------------------------------------------------------------------
-Code related to the paper "Identifying sequential residue patterns in bitter and umami peptides" by Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis. Please consider citing the paper if you find our code useful in your research. The BibTeX citation can be found in the README of the repository.
+Code related to the paper "Identifying sequential residue patterns in bitter
+and umami peptides" by Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis
+Please consider citing the paper if you find our code useful in your research.
+The BibTeX citation can be found in the README of the repository.
 ------------------------------------------------------------------------------
 '''
 
@@ -15,10 +18,13 @@ import amino_acid_data
 '''
 ------------------------------------------------------------------------------
 Parameters
-- We set max_seq_length equal to 420 (the LCM of 1..7) because we have library peptide units upto max_lib_pep_length=7.
+- We set max_seq_length equal to 420 (the LCM of 1..7) because we have library
+peptide units upto max_lib_pep_length=7.
 - We used 500 (set using the variable `runs`) train--test splits.
-- For singlets (i.e. `max_lib_pep_length`=1), set `sample_size` equal to 1. See discussion before the function `chunkstring`.
-- Note that `max_lib_pep_length`=7 with 500 train--test splits takes almost 4.5 hours to run on a single core of a MacBook Pro M1 (October, 2022).
+- For singlets (i.e. `max_lib_pep_length`=1), set `sample_size` equal to 1. 
+See discussion before the function `chunkstring`.
+- Note that `max_lib_pep_length`=7 with 500 train--test splits takes almost 4.5
+hours to run on a single core of a MacBook Pro M1 (October, 2022).
 ------------------------------------------------------------------------------
 '''
 runs = 500
@@ -140,7 +146,8 @@ def get_unique_lib_seqs(max_lib_pep_length):
     unique_sequences = {**single_sequences}
 
     # If the length is >1, then duplicate sequences will start appearing. We
-    # will check the seqs and add only if it is unique. We will add everything to all_sequences, just to check the length of it.
+    # will check the seqs and add only if it is unique. We will add everything
+    # to all_sequences, just to check the length of it.
 
     for i in range(2, max_lib_pep_length+1):
         all_sequences.update(all_lib_seqs[i])
@@ -164,7 +171,8 @@ all_sequences, unique_sequences = get_unique_lib_seqs(max_lib_pep_length)
 
 def compare_seq(seq1, seq2):
     """
-    Reference: Schilling, C., Mack, T., Lickfett, S., Sieste, S., Ruggeri, F. S., Sneideris, T., Dutta, A., Bereau, T., Naraghi, R., Sinske, D., Knowles,
+    Reference: Schilling, C., Mack, T., Lickfett, S., Sieste, S., Ruggeri, F.
+    S., Sneideris, T., Dutta, A., Bereau, T., Naraghi, R., Sinske, D., Knowles,
     T. P. J., Synatschke, C. V., Weil, T., Knöll, B., Sequence‐Optimized 
     Peptide Nanofibers as Growth Stimulators for Regeneration of Peripheral 
     Neurons. Adv. Funct. Mater. 2019, 29, 1809112. 
@@ -180,10 +188,19 @@ def compare_seq(seq1, seq2):
 
 '''
 ------------------------------------------------------------------------------
-- We want to calculate the relative occurrences of the AA types (+, -, H, P) at each lattice position of the first n (=`sample_size`) best-predicted sequences from the library.
-- At each lattice position, we will calculate the fraction of times one of the four types occur in those n best library sequences (best means the library sequence have the highest overlap with the peptides with the desired target property, bitter or umami).
-- Note that if we only consider singlets and choose `sample_size=5`, then we'll get each AA type with a 25% probability of finding in the 5 best sequences, because there are only 4 library sequences available. For that, we need to check only the best one, i.e. `sample_size=1`.
-- There are 12 unique library sequences if we consider singlets and doublets. So, we used `sample_size=5` when max_lib_pep_length>1.
+- We want to calculate the relative occurrences of the AA types (+, -, H, P) at
+each lattice position of the first n (=`sample_size`) best-predicted sequences
+from the library.
+- At each lattice position, we will calculate the fraction of times one of the
+four types occur in those n best library sequences (best means the library
+sequence have the highest overlap with the peptides with the desired target
+property, bitter or umami).
+- Note that if we only consider singlets and choose `sample_size=5`, then we'll
+get each AA type with a 25% probability of finding in the 5 best sequences,
+because there are only 4 library sequences available. For that, we need to
+check only the best one, i.e. `sample_size=1`.
+- There are 12 unique library sequences if we consider singlets and doublets.
+So, we used `sample_size=5` when max_lib_pep_length>1.
 ------------------------------------------------------------------------------
 '''
 
