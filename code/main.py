@@ -51,7 +51,8 @@ test_sets = [pd.read_csv(path) for path in test_set_paths]
 
 
 # ------------------------------------------------------------------------------
-# Convert the amino acid sequences of the proteins to a string of hydrophobicity and charge as defined in the paper.
+# Convert the amino acid sequences of the proteins to a string of
+# hydrophobicity and charge as defined in the paper.
 # ------------------------------------------------------------------------------
 
 def conv(x):
