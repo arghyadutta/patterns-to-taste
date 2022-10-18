@@ -30,7 +30,7 @@ hours to run on a single core of a MacBook Pro M1 (October, 2022).
 runs = 500
 max_seq_length = 420
 sample_size = 5
-max_lib_pep_length = 2
+max_lib_pep_length = 3
 
 # ------------------------------------------------------------------------------
 # Import the whole data and the train-test splits
