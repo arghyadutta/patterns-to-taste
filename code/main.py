@@ -1,7 +1,7 @@
 '''
 ------------------------------------------------------------------------------
 Code related to the paper "Identifying sequential residue patterns in bitter
-and umami peptides" by Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis
+and umami peptides" by Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis.
 Please consider citing the paper if you find our code useful in your research.
 The BibTeX citation can be found in the README of the repository.
 ------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ hours to run on a single core of a MacBook Pro M1 (October, 2022).
 runs = 500
 max_seq_length = 420
 sample_size = 5
-max_lib_pep_length = 3
+max_lib_pep_length = 2
 
 # ------------------------------------------------------------------------------
 # Import the whole data and the train-test splits
