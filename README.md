@@ -8,7 +8,7 @@
   journal = {ACS Food Science \& Technology},
   volume  = {2},
   number  = {11},
-  pages   = {1773-1780},
+  pages   = {1773--1780},
   year    = {2022},
   doi     = {10.1021/acsfoodscitech.2c00251},
   url     = {https://doi.org/10.1021/acsfoodscitech.2c00251},
