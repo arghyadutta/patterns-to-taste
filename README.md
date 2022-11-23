@@ -1,4 +1,4 @@
-- This repository contains code and data related to the following paper: Identifying Sequential Residue Patterns in Bitter and Umami Peptides; Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis; ACS Food Science & Technology 2022 2 (11), 1773–1780, DOI: 10.1021/acsfoodscitech.2c00251 
+- This repository contains code and data related to the following paper: Identifying Sequential Residue Patterns in Bitter and Umami Peptides; Arghya Dutta, Tristan Bereau, and Thomas A. Vilgis; ACS Food Science & Technology 2022 2 (11), 1773–1780, DOI: [10.1021/acsfoodscitech.2c00251](https://pubs.acs.org/doi/10.1021/acsfoodscitech.2c00251) 
 - Please consider citing the paper if you find our code useful in your research.
 
 ```
